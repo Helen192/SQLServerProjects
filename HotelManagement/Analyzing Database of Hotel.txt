@@ -1,0 +1,43 @@
+=============== Mini Project =================
+Yêu cầu: Xây dựng một hệ thống cơ sở dữ liệu quản lý chuỗi khách sạn.
+
+>>  1. Phân tích
+	Hệ thống này cần quản lý những cái gì??
+	- Quản lý được nhiều khách sạn
+	- Mỗi khách sạn cần quản lý cái gì
+		+ Khách hàng : (cái này ko phân tích)
+		+ Quản lý phòng
+		+ Book (thuê phòng): ĐẶt phòng, thuê phòng (cái này không làm)
+		+ Thiết bị trong khách sạn
+		+ Menu đồ ăn uống
+	=> Từ các yêu cầu : xây dựng được các bảng trong CSDL đó
+	=> Nguyên tắc thiết kế bảng trong CSDL : mỗi 1 bảng thể hiện cho một đối tượng (object) >> kiể 1 table là một class object trong Java
+	
+	2. Phân tích các bảng sử dụng trong CSDL
+		- Khách sạn : Hotel
+			+ id : int => primary key => identity(1,1)
+			+ Tên => name => nvarchar(50)
+			+ Địa chỉ => address => nvarchar(200)
+			+ Loại khách sạn => type => nvarchar(50)
+		- Phòng
+			+ Mã phòng => room_no => nvarchar(20) => primary key
+			+ Tầng => floor => int
+			+ Số lượng người => capacity => int
+			+ Giá phòng => price => float
+			+ Hotel_id => foreign key => lien ket voi bang Hotel(id)
+		- Thiết bị
+			+ Mã thiết bị => device_id => nvarchar(50) => primary key
+			+ Tên thiết bị => name => nvarchar(50)
+			+ Giá tiền => price => float
+			+ Hãng => manufacturer_name => nvarchar(150)
+			+ Ngày mua => buy_date => datetime
+			+ Thông tin cửa hàng mua => shop_infor => nvarchar(200)
+			+ Mỗi thiết bị được đặt vào một phòng duy nhất or là không => mã phòng/ rỗng => room_no => nvarchar(20) => foreign key => cái này sẽ liên kết với bảng room ở cột room_no
+			+ Note => Ghi chú lại cho thiết bị => nvarchar(300)
+		- Menu đồ ăn uống
+			+ Mã đồ uống => id => int => primary key => identity(1,1)
+			+ Tên : name => nvarchar(50)
+			+ Giá tiền : price => float
+			+ Ngày nhập : buy_date => date
+			+ Ngày hết hạn : expired_date => date
+			+ Số lượng => number => int

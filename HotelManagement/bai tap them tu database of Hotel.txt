@@ -1,0 +1,28 @@
+Chủ đề học: Tìm hiểu sâu về select
+- Select
+	- Like
+	- And
+	- Not
+	- In
+	- Group By ... Having
+	- Order By
+		- Asc
+		- Desc
+	- Union
+- Join
+	- Left Join
+	- Right Join
+	- Inner Join
+	- Full Outer Join
+=============================== Sử Dụng Lại Bài Analyzing Database of Hotel Để Làm Các Yêu Cầu Sau =================
+- Liệt kê thông tin phòng theo đầu ra : Tên khách sạn, loại khách sạn, địa chỉ, mã phòng, tầng mấy, giá, số lượng
+	- Liệt kê tất cả
+	- Khách sạn loại 5*, phòng 2 người
+	- Khách sạn loại 5*, phòng 2 người, giá 200000
+	- Khách sạn có địa chỉ ở quận Ba Đình
+	- KHách sạn không có đại chỉ ở quận Ba Đình
+	- Phòng chứa 1,2,3,4,5 người
+- Liệt kê thông tin: tên khách sạn, loại khách sạn, địa chỉ, số lượng phòng
+- Liệt kê thông tin: tên khách sạn, địa chỉ, số lượng phòng, số lượng phòng >2
+- Liệt kê thông tin: tên khách sạn, loại khách sạn, địa chỉ, số lượng phòng => sắp xếp số lượng phòng tăng dần
+- Liệt kê thông tin: tên khách sạn, loại khách sạn, địa chỉ, số lượng phòng => sắp xếp số lượng phòng giảm dần

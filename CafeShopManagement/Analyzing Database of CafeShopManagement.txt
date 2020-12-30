@@ -1,0 +1,35 @@
+1. category
+	- id: int -> primary key -> identity(1,1)
+	- name: nvarchar(50)
+2. product
+	- id: int -> primary key -> identity(1,1)
+	- title: nvarchar(50)
+	- price: float
+	- description: text => introductions about drinks
+	- id_category: int => foreign key => category(id)
+3. staff
+	- id: int => primary key => identity(1,1)
+	- fullname: nvarchar(50)
+	- address: nvarchar(150)
+	- gender: nvarchar(15)
+	- birthday: date
+	- phone_number: nvarchar(20)
+4. customer
+	- id: int => primary key => identity(1,1)
+	- fullname: nvarchar(50)
+	- phone_number: nvarchar(20)
+	- email: nvarchar(150)
+5. Orders:
+	- id: int => primary key => identity(1,1)  // id of order
+	- customer_id: int => foreign key => customer(id)    // customer who ask for this order
+	- staff_id: int => foreign key => staff(id)   // who is responsible for this order
+	- price_total: float      // total price of one Order
+6. OrderDetail:    // one order can includes a lot of different kinds of drinks. Each drink has an orderDetail
+	- id: int => primary key => identity(1,1)   // id of OrderDetail
+	- order_id: int => foreign key => order(id)
+	- product_id: int => foreign key => product(id)
+	- price: float   // price of a type of drink 
+	- num: int   // number of each drink
+	- price_total: float    // total price of this OrderDetail
+
+	
